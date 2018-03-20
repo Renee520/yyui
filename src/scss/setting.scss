@@ -1,0 +1,17 @@
+//主色
+$primary-color: #548dd4 !default;
+$primary-deep-color: #4a7cbb !default;
+$danger-color: #ef4f4f;
+$danger-deep-color: #F13535;
+$success-color: #1da008;
+$success-deep-color: #1A8808;
+$warning-color: #fefe33;
+$warning-deep-color: #eeee2d;
+$gray-color: #9c9c9c;
+$gray-deep-color: #DAD7D7;
+$default-color: #5a5a5a;
+$default-deep-color: #383737;
+$font-primary-color: #333;
+
+//btn color
+$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color);

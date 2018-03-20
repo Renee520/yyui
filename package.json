@@ -1,0 +1,14 @@
+{
+  "name": "yyui",
+  "version": "1.0.0",
+  "description": "=^_^=",
+  "author": "园原",
+  "homepage": "",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-jade": "^1.1.0"
+  }
+}
