@@ -1,0 +1,44 @@
+@import 'setting.scss';
+
+@mixin gb($top, $right, $bottom, $left) {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  left: 0;
+  top: 0;
+  @if($top) {
+    border-#{$top}:1px solid $gray-thin-color;
+  } @else if($right) {
+    border-#{$right}:1px solid $gray-thin-color;
+  } @else if($bottom) {
+    border-#{$bottom}:1px solid $gray-thin-color;
+  }@else if($left) {
+    border-#{$left}:1px solid $gray-thin-color;
+  } @else{ 
+    border: 1px solid $gray-thin-color;
+  }
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.yy_grids{
+  position: relative;
+  overflow: hidden;
+  &:before{
+    @include gb;
+  }
+}
+
+.yy_grid{
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  &:before{
+    @include gb(null, right, bottom, null)
+  }
+}
