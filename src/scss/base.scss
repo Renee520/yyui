@@ -1,4 +1,4 @@
-@charset "utf-8";
+@import './setting.scss';
 body,
 button,
 dd,
@@ -40,7 +40,7 @@ body {
   min-width: 320px;
   max-width:640px;
   margin:0 auto;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
   color: #333;
   -webkit-text-size-adjust: none;
@@ -63,6 +63,11 @@ a {
 }
 table {
   border-collapse: collapse;
+}
+.yy_line{
+  height: 1px;
+  background-color: $gray-thin-color;
+  opacity: 0.5;
 }
 .text_center{text-align:center;margin:0 auto;}
 .yy_inner{padding:0 8px;}

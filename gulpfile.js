@@ -37,12 +37,27 @@ gulp.task('jade', function (done) {
 });
 
 //jade2html
-gulp.task('scss2css', function (done) {
-  gulp.src(['./src/scss/**/*.scss', '!./src/scss/**/setting.scss'])
+gulp.task('sass', function (done) {
+  gulp.src(['./src/scss/yyui.scss'])
     .pipe($.sass())
     // .on('error', $.sass.logError)
     .pipe(gulp.dest('./dist/css'))
     .on('end', done)
+});
+
+gulp.task('cssmin', ['sass'], function (done) {
+  gulp.src(['./dist/css/*.css', '!./dist/css/*.min.css'])           //需处理的路径
+    // .pipe(gulp.dest('./www/css'))    //输出文件本地
+    .pipe($.minifyCss())                //压缩处理成一行
+    .pipe($.rename({
+      extname: '.min.css'             //压缩名
+    }))
+    // .pipe($.rev())                      //文件名加MD5后缀
+    .pipe(gulp.dest('./dist/css'))    //输出文件本地
+    .pipe($.replace('yyui.css', 'yyui.min.css'))
+    .pipe($.rev.manifest())             //生成一个rev-manifest.json
+    .pipe(gulp.dest('./src/css'))
+    .on('end', done);
 });
 
 // 静态文件搬进dist目录
@@ -55,15 +70,16 @@ gulp.task('data2dist', function (done) {
 
 // gulp.task('')
 
+gulp.task('build', ['jade', 'cssmin', 'data2dist']);
 gulp.task('watch', function () {
+  gulp.watch(['src/jade/**/*.jade', 'src/js/**/*.js', 'src/scss/**/*.scss'], ['build'])
+  // gulp.watch('src/jade/**/*.jade', ['jade']);
   // gulp.watch('src/js/**/*.js', ['js']);
-  gulp.watch('src/scss/**/*.scss', ['scss2css']);
-  gulp.watch('src/images/**/*.*', ['data2dist']);
-  gulp.watch('src/jade/**/*.jade', ['jade']);
+  // gulp.watch('src/scss/**/*.scss', ['sass']);
+  // gulp.watch('src/images/**/*.*', ['data2dist']);
   // gulp.watch('demos/css/*.css', ['copy']);
 });
 
-gulp.task('build', ['jade', 'data2dist']);
 
 gulp.task('server', function () {
   $.connect.server({

@@ -1,5 +1,4 @@
 
-@charset "utf-8";
 //主色
 $primary-color: #548dd4 !default;
 $primary-deep-color: #4a7cbb !default;
@@ -10,6 +9,7 @@ $success-deep-color: #1A8808;
 $warning-color: #fefe33;
 $warning-deep-color: #eeee2d;
 $gray-color: #9c9c9c;
+$gray-deep-color: #878585;
 $gray-thin-color: #DAD7D7;
 // $gray-deep-color: #DAD7D7;
 $default-color: #5a5a5a;
@@ -19,4 +19,4 @@ $font-primary-color: #333;
 $col: 1,2,3,4,5,6,7,8,9,10;
 
 //btn color
-$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-thin-color);
+$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color);
