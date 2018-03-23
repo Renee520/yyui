@@ -40,7 +40,9 @@ gulp.task('jade', function (done) {
 gulp.task('sass', function (done) {
   gulp.src(['./src/scss/yyui.scss'])
     .pipe($.sass())
-    // .on('error', $.sass.logError)
+    .on('error', (e) => {
+      console.log('scss to css error:',e);
+    })
     .pipe(gulp.dest('./dist/css'))
     .on('end', done)
 });

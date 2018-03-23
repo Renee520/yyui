@@ -2,36 +2,61 @@
 
 .yy_btn{
   position: relative;
-  display: block;
+  display: inline-flex;
   width: 100%;
   color: #fff;
-  padding: 8px 10px;
+  padding: 6px 10px;
   box-sizing: border-box;
   text-align: center;
-  border-radius: 5px;
+  width: auto;
 }
 
 @each $colorClass in $btn_color{
   $class:      nth($colorClass,1);
   $bgColor:    nth($colorClass,2);
   $activeColor:nth($colorClass,3);
-  .yy_btn_#{$class}{
+  .yy_#{$class}{
     border: 1px solid $bgColor;
     background: $bgColor;
-    color: #fff;
-    &:not(.btn_disabled):active{
+    &:not(.yy_disabled):active{
       background: $activeColor;
     }
-  }
-  .yy_btn_empty_#{$class}{
-    border: 1px solid $bgColor;
-    color: $bgColor;
-  }
-
-  //文字颜色
-  .text_#{$class}{
-    color: $bgColor !important;
+    &.yy_disabled{
+      color: rgba(255, 255, 255, 0.6);
+    }
+    &.yy_outline{
+      color: $bgColor;
+      background: transparent;
+      &:not(.yy_disabled):active{
+        border-color:$activeColor;
+        color: $activeColor;
+        background-color: #FBFBFB;
+      }
+      &.yy_disabled{
+        color: $bgColor;
+        opacity: .7;
+      }
+    }
   }
 }
 
-.yy_btn + .yy_btn{margin-top: 10px;}
+.yy_btn + .yy_btn{
+  // margin-top: 10px;
+  margin-left: 10px;
+}
+.yy_btn.yy_circle{border-radius: 20px;}
+.yy_min{
+  font-size: .5rem;
+  padding: 3px 6px;
+}
+.yy_large{
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+.yy_block{
+  display: block;
+}
+.yy_long{
+  padding-left: 38px !important; 
+  padding-right: 38px !important;
+}
