@@ -1,46 +1,19 @@
-@import 'setting.scss';
-
-@mixin grid{
-  @each $i in $col{
-    .yy_grid_#{$i}{
-      width: '#{100%/$i}';
-      width: calc(100%/#{$i});
-    }
-  }
-}
-
-@mixin gb {
-  content: '';
-  position: absolute;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0.5;
-}
-
-.yy_grids{
+.yy_groups{
+  background-color: #fff;
   position: relative;
   overflow: hidden;
-  &:before{
-    @include gb;
-    border: 1px solid $gray-thin-color;
-    border-bottom: none;
-    border-right: none;
-  }
-  @include grid;
-}
-
-.yy_grid{
-  position: relative;
-  float: left;
-  padding: 20px 10px;
-  box-sizing: border-box;
-  &:before{
-    @extend .yy_grids:before;
-    border:none;
-    border-bottom: 1px solid $gray-thin-color;
-    border-right: 1px solid $gray-thin-color;
+  line-height: 1.5;
+  .yy_group{
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 10px 15px;
   }
 }

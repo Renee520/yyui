@@ -70,9 +70,12 @@ table {
   opacity: 0.5;
 }
 .text_center{text-align:center;margin:0 auto;}
-.yy_inner{padding:0 8px;}
+.yy_inner{padding:8px;}
 .yy_radius{
   border-radius: 5px;
+}
+.yy_outline{
+  border: 0.03rem solid $gray-thin-color;  
 }
 .yy_circle{
   border-radius: 50%;

@@ -38,7 +38,7 @@ gulp.task('jade', function (done) {
 
 //jade2html
 gulp.task('sass', function (done) {
-  gulp.src(['./src/scss/yyui.scss'])
+  gulp.src(['./src/scss/yyui.scss', './src/scss/test.scss'])
     .pipe($.sass())
     .on('error', (e) => {
       console.log('scss to css error:',e);
