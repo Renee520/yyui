@@ -74,11 +74,11 @@ gulp.task('data2dist', function (done) {
 
 gulp.task('build', ['jade', 'cssmin', 'data2dist']);
 gulp.task('watch', function () {
-  gulp.watch(['src/jade/**/*.jade', 'src/js/**/*.js', 'src/scss/**/*.scss'], ['build'])
-  // gulp.watch('src/jade/**/*.jade', ['jade']);
-  // gulp.watch('src/js/**/*.js', ['js']);
-  // gulp.watch('src/scss/**/*.scss', ['sass']);
-  // gulp.watch('src/images/**/*.*', ['data2dist']);
+  // gulp.watch(['src/jade/**/*.jade', 'src/js/**/*.js', 'src/scss/**/*.scss'], ['build']);
+  gulp.watch('src/jade/**/*.jade', ['jade']);
+  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/images/*.*', ['data2dist']);
   // gulp.watch('demos/css/*.css', ['copy']);
 });
 
@@ -86,7 +86,7 @@ gulp.task('watch', function () {
 gulp.task('server', function () {
   $.connect.server({
     debug: true,
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8001,
     livereload: true,
     root: ['./dist']

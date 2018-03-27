@@ -15,11 +15,20 @@
   $class:      nth($colorClass,1);
   $bgColor:    nth($colorClass,2);
   $activeColor:nth($colorClass,3);
+  @if($activeColor != '') {
+    .yy_deep#{$class}{
+      border: 1px solid $activeColor;
+      background: $activeColor;
+    }
+  }
   .yy_#{$class}{
     border: 1px solid $bgColor;
     background: $bgColor;
-    &:not(.yy_disabled):active{
-      background: $activeColor;
+    @if($activeColor != '') {
+      &:not(.yy_disabled):active{
+        background: $activeColor;
+        border-color: $activeColor;
+      }
     }
     &.yy_disabled{
       color: rgba(255, 255, 255, 0.6);
@@ -27,10 +36,12 @@
     &.yy_outline{
       color: $bgColor;
       background: transparent;
-      &:not(.yy_disabled):active{
-        border-color:$activeColor;
-        color: $activeColor;
-        background-color: #FBFBFB;
+      @if($activeColor != '') {
+        &:not(.yy_disabled):active{
+          border-color:$activeColor;
+          color: $activeColor;
+          background-color: #FBFBFB;
+        }
       }
       &.yy_disabled{
         color: $bgColor;

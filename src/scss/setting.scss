@@ -16,9 +16,38 @@ $default-color: #5a5a5a;
 $default-deep-color: #383737;
 $font-primary-color: #333;
 
+// 配色
+$wood-color: #E9AE6A;
+$wood-deep-color: #BA874C;
+$wood-thin-color: #F1AAA6;
+$violet-color: #8192D6;
+$violet-deep-color: #726DD1;
+$violet-thin-color: #90a2e9;
+$bluegreen-color: #1DB0B8;
+$graygreen-color: #AAB8A3;
+$blue-color: #37C6C0;
+$blue-deep-color: #1DB0B8;
+$blue-thin-color: #D0E9FF;
+$pink-color: #FF5983;
+$pink-deep-color: #F93B6B;
+$pink-thin-color: #EFCEE8;
+
 $col: 1,2,3,4,5,6,7,8,9,10;
 
 //btn color
-$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color);
+$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color), (wood $wood-color $wood-deep-color), (violet $violet-color $violet-deep-color), (blue $blue-color $blue-deep-color), (pink $pink-color $pink-deep-color), (thinwood $wood-thin-color ''), (thinviolet $violet-thin-color ''), (bluegreen $bluegreen-color ''), (graygreen $graygreen-color ''), (thinblue $blue-thin-color ''), (thinpink $pink-thin-color '');
+
+
 
 $version: moz, webkit, o, ms;
+
+@mixin border{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 1px solid $gray-thin-color;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+}

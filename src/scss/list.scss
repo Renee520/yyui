@@ -1,19 +1,100 @@
+@import './setting.scss';
+
 .yy_groups{
   background-color: #fff;
   position: relative;
   overflow: hidden;
   line-height: 1.5;
-  .yy_group{
-    display: flex;
+  &:after, &:before{
+    @include border;
+    left: 0;
+    border-left: none;
+    border-right: none;
+  }
+  &:after{
+    border-top: none;
+  }
+  &:before{
+    top: 0;
+    border-bottom: none;
+  }
+}
+.yy_group{
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 10px;
+  &.group_top {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     align-items: flex-start;
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: 10px 15px;
+  }
+  &.yy_border:not(:last-child):after{
+   @include border;
+   left: 10px;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+  }
+  &.yy_img_border:not(:last-child):after{
+    @extend .yy_group.yy_border:after;
+    left: 50px;
+  }
+  .yy_group_side{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  .yy_group_title{
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: -5px;
+    line-height: 24px;
+    max-height: 48px;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .yy_group_desc{
+    color: $gray-color;
+    font-size: 12px; 
+    line-height: 18px;
+    max-height: 36px;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .yy_group_info{
+    color: $gray-color;
+    *{color: $gray-color;}
+    margin-left: 8px;
+  }
+  .yy_group_icon{
+    width: 34px;
+    height: 34px;
+    vertical-align: middle;
+    margin-right: 8px;
+    text-align: center;
+    line-height: 34px;
+    color: #fff;
+    img{
+      width: 100%;
+      border: 0;
+    }
+  }
+  .yy_group_img{
+    @extend .yy_group_icon;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
   }
 }
