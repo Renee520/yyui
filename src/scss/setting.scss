@@ -35,10 +35,25 @@ $pink-thin-color: #EFCEE8;
 $col: 1,2,3,4,5,6,7,8,9,10;
 
 // space
-$space-primary: 10px;
-$space-lg: 15px;
+$space-primary: 8px;
+$space-lg: 12px;
 $space-sm: 5px;
 $space-xs: 2px;
+
+//margin
+$margin-primary: 10px;
+$margin-md: 15px;
+$margin-lg: 20px;
+$margin-sm: 8px;
+$margin-xs: 5px;
+
+// font-size
+$font-size-primary: 16px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+
 
 //btn color
 $btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color), (wood $wood-color $wood-deep-color), (violet $violet-color $violet-deep-color), (blue $blue-color $blue-deep-color), (pink $pink-color $pink-deep-color), (thinwood $wood-thin-color ''), (thinviolet $violet-thin-color ''), (bluegreen $bluegreen-color ''), (graygreen $graygreen-color ''), (thinblue $blue-thin-color ''), (thinpink $pink-thin-color '');
@@ -60,6 +75,7 @@ $version: moz, webkit, o, ms;
 
 @mixin ellipsis($line: '', $lineHeight: ''){
   overflow: hidden;
+  width: 100%;
   text-overflow: ellipsis;
   word-wrap: normal;
   word-wrap: break-word;
@@ -68,7 +84,7 @@ $version: moz, webkit, o, ms;
     @if($lineHeight != '') {
       line-height: $lineHeight;
     }
-    display: -webkit-box;
+    display: -webkit-box !important;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: $line;
   } @else {

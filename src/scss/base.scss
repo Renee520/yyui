@@ -33,14 +33,13 @@ select,
 table,
 a,input{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;}
 textarea {
-  font-size: 16px;
   line-height: 1.25em;
 }
 body {
   min-width: 320px;
   max-width:640px;
   margin:0 auto;
-  font-size: 14px;
+  font-size: $font-size-primary;
   font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
   color: #333;
   -webkit-text-size-adjust: none;
@@ -69,7 +68,7 @@ table {
   background-color: $gray-thin-color;
   opacity: 0.5;
 }
-.text_center{text-align:center;margin:0 auto;}
+.text--center{text-align:center;margin:0 auto;}
 .yy_inner{padding:8px;}
 .yy_radius{
   border-radius: 5px;
@@ -82,7 +81,6 @@ table {
   overflow: hidden;
 }
 .yy_title{
-  font-size: 16px;
   border-left: 2px solid $font-primary-color;
   height: 18px;
   margin: 10px 0;
@@ -95,11 +93,11 @@ table {
   $bgColor:    nth($color,2);
 
   //文字颜色
-  .text_#{$class}{
+  .text--#{$class}{
     color: $bgColor !important;
   }
 
-  .yy_title_#{$class} {
+  .yy_title--#{$class} {
     border-color: $bgColor;
     color: $bgColor;
   }

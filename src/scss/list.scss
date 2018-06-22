@@ -30,7 +30,7 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  padding: 10px;
+  padding: $margin-sm;
   &.group_top {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
@@ -38,7 +38,7 @@
   }
   &.yy_border:not(:last-child):after{
    @include border;
-   left: 10px;
+   left: $margin-sm;
    border-top: none;
    border-left: none;
    border-right: none;
@@ -47,42 +47,35 @@
     @extend .yy_group.yy_border:after;
     left: 50px;
   }
-  .yy_group_side{
+  .yy_group__side{
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
   }
   .yy_group_title{
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: $font-size-primary;
+    margin-bottom: $margin-sm;
     margin-top: -5px;
-    line-height: 24px;
     max-height: 48px;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    @include ellipsis(2, 24px);
   }
   .yy_group_desc{
     color: $gray-color;
-    font-size: 12px; 
-    line-height: 18px;
+    font-size: $font-size-sm; 
+    // line-height: 18px;
     max-height: 36px;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    @include ellipsis(2, 18px);
   }
-  .yy_group_info{
+  .yy_group__info{
     color: $gray-color;
     *{color: $gray-color;}
-    margin-left: 8px;
+    margin-left: $margin-sm;
   }
-  .yy_group_icon{
+  .yy_group__icon{
     width: 34px;
     height: 34px;
     vertical-align: middle;
-    margin-right: 8px;
+    margin-right: $margin-sm;
     text-align: center;
     line-height: 34px;
     color: #fff;
@@ -90,9 +83,12 @@
       width: 100%;
       border: 0;
     }
+    &--min{
+      margin-right: $margin-sm;
+    }
   }
   .yy_group_img{
-    @extend .yy_group_icon;
+    @extend .yy_group__icon;
     width: 60px;
     height: 60px;
     line-height: 60px;

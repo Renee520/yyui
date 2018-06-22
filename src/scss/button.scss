@@ -60,11 +60,11 @@
 // }
 .yy_btn.yy_circle{border-radius: 20px;}
 .yy_min{
-  font-size: .5rem;
+  font-size: $font-size-xs;
   padding: 3px 6px;
 }
 .yy_large{
-  font-size: 1rem;
+  font-size: $font-size-lg;
   padding: 10px 15px;
 }
 .yy_block{
