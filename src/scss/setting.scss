@@ -34,6 +34,12 @@ $pink-thin-color: #EFCEE8;
 
 $col: 1,2,3,4,5,6,7,8,9,10;
 
+// space
+$space-primary: 10px;
+$space-lg: 15px;
+$space-sm: 5px;
+$space-xs: 2px;
+
 //btn color
 $btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color), (wood $wood-color $wood-deep-color), (violet $violet-color $violet-deep-color), (blue $blue-color $blue-deep-color), (pink $pink-color $pink-deep-color), (thinwood $wood-thin-color ''), (thinviolet $violet-thin-color ''), (bluegreen $bluegreen-color ''), (graygreen $graygreen-color ''), (thinblue $blue-thin-color ''), (thinpink $pink-thin-color '');
 
@@ -50,4 +56,22 @@ $version: moz, webkit, o, ms;
   width: 100%;
   height: 100%;
   opacity: .5;
+}
+
+@mixin ellipsis($line: '', $lineHeight: ''){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  @if($line != '') {
+    @if($lineHeight != '') {
+      line-height: $lineHeight;
+    }
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  } @else {
+    white-space: nowrap;
+  }
 }
