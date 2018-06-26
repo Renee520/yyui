@@ -62,6 +62,21 @@ gulp.task('cssmin', ['sass'], function (done) {
     .on('end', done);
 });
 
+gulp.task('jsmin', function (done) {
+  gulp.src(['./dist/js/*.js', '!./dist/js/*.min.js'])           //需处理的路径
+    // .pipe(gulp.dest('./www/css'))    //输出文件本地
+    .pipe($.uglify())                //压缩处理成一行
+    .pipe($.rename({
+      extname: '.min.js'             //压缩名
+    }))
+    // .pipe($.rev())                      //文件名加MD5后缀
+    .pipe(gulp.dest('./dist/js'))    //输出文件本地
+    // .pipe($.replace('yyui.css', 'yyui.min.css'))
+    .pipe($.rev.manifest())             //生成一个rev-manifest.json
+    .pipe(gulp.dest('./src/js'))
+    .on('end', done);
+});
+
 // 静态文件搬进dist目录
 gulp.task('data2dist', function (done) {
   gulp.src(['./src/images/**/*.*']).pipe(gulp.dest('./dist/images/'));
@@ -72,7 +87,7 @@ gulp.task('data2dist', function (done) {
 
 // gulp.task('')
 
-gulp.task('build', ['jade', 'cssmin', 'data2dist']);
+gulp.task('build', ['jade', 'cssmin', 'jsmin', 'data2dist']);
 gulp.task('watch', function () {
   // gulp.watch(['src/jade/**/*.jade', 'src/js/**/*.js', 'src/scss/**/*.scss'], ['build']);
   gulp.watch('src/jade/**/*.jade', ['jade']);

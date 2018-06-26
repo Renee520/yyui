@@ -1,5 +1,18 @@
 extends layout
 block content
+  style.
+    .yy_grid .img .icon {
+      font-weight: 100 !important;
+    }
+    .yy_grids .yy_grid_3 {
+      height: 150px;
+      overflow: hidden;
+    }
+
+  script.
+    $('i').each(() => {
+      console.log(this)
+    })
   
   br
   header.text--center
@@ -8,295 +21,297 @@ block content
   br
 
   .yy_inner
-    .row
-      .the-icons.span3(title='Code: 0xe800')
-        i.icon.icon-user
-        span.i-name icon-user
-        span.i-code 0xe800
-      .the-icons.span3(title='Code: 0xe801')
-        i.icon.icon-users
-        span.i-name icon-users
-        span.i-code 0xe801
-      .the-icons.span3(title='Code: 0xe802')
-        i.icon.icon-search
-        span.i-name icon-search
-        span.i-code 0xe802
-      .the-icons.span3(title='Code: 0xe803')
-        i.icon.icon-search-1
-        span.i-name icon-search-1
-        span.i-code 0xe803
-    .row
-      .the-icons.span3(title='Code: 0xe804')
-        i.icon.icon-picture
-        span.i-name icon-picture
-        span.i-code 0xe804
-      .the-icons.span3(title='Code: 0xe805')
-        i.icon.icon-th-large
-        span.i-name icon-th-large
-        span.i-code 0xe805
-      .the-icons.span3(title='Code: 0xe806')
-        i.icon.icon-th-large-1
-        span.i-name icon-th-large-1
-        span.i-code 0xe806
-      .the-icons.span3(title='Code: 0xe807')
-        i.icon.icon-th-large-outline
-        span.i-name icon-th-large-outline
-        span.i-code 0xe807
-    .row
-      .the-icons.span3(title='Code: 0xe808')
-        i.icon.icon-menu
-        span.i-name icon-menu
-        span.i-code 0xe808
-      .the-icons.span3(title='Code: 0xe809')
-        i.icon.icon-th-large-2
-        span.i-name icon-th-large-2
-        span.i-code 0xe809
-      .the-icons.span3(title='Code: 0xe80a')
-        i.icon.icon-heart
-        span.i-name icon-heart
-        span.i-code 0xe80a
-      .the-icons.span3(title='Code: 0xe80b')
-        i.icon.icon-heart-empty
-        span.i-name icon-heart-empty
-        span.i-code 0xe80b
-    .row
-      .the-icons.span3(title='Code: 0xe80c')
-        i.icon.icon-star
-        span.i-name icon-star
-        span.i-code 0xe80c
-      .the-icons.span3(title='Code: 0xe80d')
-        i.icon.icon-star-empty
-        span.i-name icon-star-empty
-        span.i-code 0xe80d
-      .the-icons.span3(title='Code: 0xe80e')
-        i.icon.icon-star-half
-        span.i-name icon-star-half
-        span.i-code 0xe80e
-      .the-icons.span3(title='Code: 0xe80f')
-        i.icon.icon-ok
-        span.i-name icon-ok
-        span.i-code 0xe80f
-    .row
-      .the-icons.span3(title='Code: 0xe810')
-        i.icon.icon-ok-circled
-        span.i-name icon-ok-circled
-        span.i-code 0xe810
-      .the-icons.span3(title='Code: 0xe811')
-        i.icon.icon-ok-circled2
-        span.i-name icon-ok-circled2
-        span.i-code 0xe811
-      .the-icons.span3(title='Code: 0xe812')
-        i.icon.icon-cancel
-        span.i-name icon-cancel
-        span.i-code 0xe812
-      .the-icons.span3(title='Code: 0xe813')
-        i.icon.icon-cancel-circled
-        span.i-name icon-cancel-circled
-        span.i-code 0xe813
-    .row
-      .the-icons.span3(title='Code: 0xe814')
-        i.icon.icon-cancel-circled2
-        span.i-name icon-cancel-circled2
-        span.i-code 0xe814
-      .the-icons.span3(title='Code: 0xe815')
-        i.icon.icon-plus
-        span.i-name icon-plus
-        span.i-code 0xe815
-      .the-icons.span3(title='Code: 0xe816')
-        i.icon.icon-plus-circled
-        span.i-name icon-plus-circled
-        span.i-code 0xe816
-      .the-icons.span3(title='Code: 0xe817')
-        i.icon.icon-minus
-        span.i-name icon-minus
-        span.i-code 0xe817
-    .row
-      .the-icons.span3(title='Code: 0xe818')
-        i.icon.icon-minus-circled
-        span.i-name icon-minus-circled
-        span.i-code 0xe818
-      .the-icons.span3(title='Code: 0xe819')
-        i.icon.icon-info-circled
-        span.i-name icon-info-circled
-        span.i-code 0xe819
-      .the-icons.span3(title='Code: 0xe81a')
-        i.icon.icon-help-circled
-        span.i-name icon-help-circled
-        span.i-code 0xe81a
-      .the-icons.span3(title='Code: 0xe81b')
-        i.icon.icon-home
-        span.i-name icon-home
-        span.i-code 0xe81b
-    .row
-      .the-icons.span3(title='Code: 0xe81c')
-        i.icon.icon-mail
-        span.i-name icon-mail
-        span.i-code 0xe81c
-      .the-icons.span3(title='Code: 0xe81d')
-        i.icon.icon-tags
-        span.i-name icon-tags
-        span.i-code 0xe81d
-      .the-icons.span3(title='Code: 0xe81e')
-        i.icon.icon-thumbs-up
-        span.i-name icon-thumbs-up
-        span.i-code 0xe81e
-      .the-icons.span3(title='Code: 0xe81f')
-        i.icon.icon-thumbs-down
-        span.i-name icon-thumbs-down
-        span.i-code 0xe81f
-    .row
-      .the-icons.span3(title='Code: 0xe820')
-        i.icon.icon-bookmark
-        span.i-name icon-bookmark
-        span.i-code 0xe820
-      .the-icons.span3(title='Code: 0xe821')
-        i.icon.icon-trash-empty
-        span.i-name icon-trash-empty
-        span.i-code 0xe821
-      .the-icons.span3(title='Code: 0xe822')
-        i.icon.icon-comment
-        span.i-name icon-comment
-        span.i-code 0xe822
-      .the-icons.span3(title='Code: 0xe823')
-        i.icon.icon-chat
-        span.i-name icon-chat
-        span.i-code 0xe823
-    .row
-      .the-icons.span3(title='Code: 0xe824')
-        i.icon.icon-cog
-        span.i-name icon-cog
-        span.i-code 0xe824
-      .the-icons.span3(title='Code: 0xe825')
-        i.icon.icon-wrench
-        span.i-name icon-wrench
-        span.i-code 0xe825
-      .the-icons.span3(title='Code: 0xe826')
-        i.icon.icon-basket
-        span.i-name icon-basket
-        span.i-code 0xe826
-      .the-icons.span3(title='Code: 0xe82b')
-        i.icon.icon-ok-circle
-        span.i-name icon-ok-circle
-        span.i-code 0xe82b
-    .row
-      .the-icons.span3(title='Code: 0xe82c')
-        i.icon.icon-cancel-circle
-        span.i-name icon-cancel-circle
-        span.i-code 0xe82c
-      .the-icons.span3(title='Code: 0xe82d')
-        i.icon.icon-location
-        span.i-name icon-location
-        span.i-code 0xe82d
-      .the-icons.span3(title='Code: 0xe834')
-        i.icon.icon-spin4.animate-spin
-        span.i-name icon-spin4
-        span.i-code 0xe834
-      .the-icons.span3(title='Code: 0xe838')
-        i.icon.icon-spin5.animate-spin
-        span.i-name icon-spin5
-        span.i-code 0xe838
-    .row
-      .the-icons.span3(title='Code: 0xe839')
-        i.icon.icon-spin6.animate-spin
-        span.i-name icon-spin6
-        span.i-code 0xe839
-      .the-icons.span3(title='Code: 0xf004')
-        i.icon.icon-down-open-1
-        span.i-name icon-down-open-1
-        span.i-code 0xf004
-      .the-icons.span3(title='Code: 0xf005')
-        i.icon.icon-up-open-1
-        span.i-name icon-up-open-1
-        span.i-code 0xf005
-      .the-icons.span3(title='Code: 0xf006')
-        i.icon.icon-right-open-1
-        span.i-name icon-right-open-1
-        span.i-code 0xf006
-    .row
-      .the-icons.span3(title='Code: 0xf007')
-        i.icon.icon-left-open-1
-        span.i-name icon-left-open-1
-        span.i-code 0xf007
-      .the-icons.span3(title='Code: 0xf025')
-        i.icon.icon-ccw
-        span.i-name icon-ccw
-        span.i-code 0xf025
-      .the-icons.span3(title='Code: 0xf097')
-        i.icon.icon-bookmark-empty
-        span.i-name icon-bookmark-empty
-        span.i-code 0xf097
-      .the-icons.span3(title='Code: 0xf0b2')
-        i.icon.icon-resize-full-alt
-        span.i-name icon-resize-full-alt
-        span.i-code 0xf0b2
-    .row
-      .the-icons.span3(title='Code: 0xf0c5')
-        i.icon.icon-docs
-        span.i-name icon-docs
-        span.i-code 0xf0c5
-      .the-icons.span3(title='Code: 0xf0ca')
-        i.icon.icon-list-bullet
-        span.i-name icon-list-bullet
-        span.i-code 0xf0ca
-      .the-icons.span3(title='Code: 0xf0e0')
-        i.icon.icon-mail-alt
-        span.i-name icon-mail-alt
-        span.i-code 0xf0e0
-      .the-icons.span3(title='Code: 0xf0ed')
-        i.icon.icon-download-cloud
-        span.i-name icon-download-cloud
-        span.i-code 0xf0ed
-    .row
-      .the-icons.span3(title='Code: 0xf0ee')
-        i.icon.icon-upload-cloud
-        span.i-name icon-upload-cloud
-        span.i-code 0xf0ee
-      .the-icons.span3(title='Code: 0xf0f6')
-        i.icon.icon-doc-text
-        span.i-name icon-doc-text
-        span.i-code 0xf0f6
-      .the-icons.span3(title='Code: 0xf0fe')
-        i.icon.icon-plus-squared
-        span.i-name icon-plus-squared
-        span.i-code 0xf0fe
-      .the-icons.span3(title='Code: 0xf10c')
-        i.icon.icon-circle-empty
-        span.i-name icon-circle-empty
-        span.i-code 0xf10c
-    .row
-      .the-icons.span3(title='Code: 0xf123')
-        i.icon.icon-star-half-alt
-        span.i-name icon-star-half-alt
-        span.i-code 0xf123
-      .the-icons.span3(title='Code: 0xf146')
-        i.icon.icon-minus-squared
-        span.i-name icon-minus-squared
-        span.i-code 0xf146
-      .the-icons.span3(title='Code: 0xf14a')
-        i.icon.icon-ok-squared
-        span.i-name icon-ok-squared
-        span.i-code 0xf14a
-      .the-icons.span3(title='Code: 0xf164')
-        i.icon.icon-thumbs-up-alt
-        span.i-name icon-thumbs-up-alt
-        span.i-code 0xf164
-    .row
-      .the-icons.span3(title='Code: 0xf165')
-        i.icon.icon-thumbs-down-alt
-        span.i-name icon-thumbs-down-alt
-        span.i-code 0xf165
-      .the-icons.span3(title='Code: 0xf1f8')
-        i.icon.icon-trash
-        span.i-name icon-trash
-        span.i-code 0xf1f8
-      .the-icons.span3(title='Code: 0xf234')
-        i.icon.icon-user-plus
-        span.i-name icon-user-plus
-        span.i-code 0xf234
-      .the-icons.span3(title='Code: 0xf2c0')
-        i.icon.icon-user-o
-        span.i-name icon-user-o
-        span.i-code 0xf2c0
+    .yy_grids.text--center
+      .yy_grid.yy_grid_3(title='Code: 0xe800')
+        .img
+          i.icon.icon-user
+          p.i-name icon-user
+      .yy_grid.yy_grid_3(title='Code: 0xe801')
+        .img
+          i.icon.icon-users
+          p.i-name icon-users
+      .yy_grid.yy_grid_3(title='Code: 0xe802')
+        .img
+          i.icon.icon-search
+          p.i-name icon-search
+      .yy_grid.yy_grid_3(title='Code: 0xe803')
+        .img
+          i.icon.icon-search-1
+          p.i-name icon-search-1
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe804')
+        .img
+          i.icon.icon-picture
+          p.i-name icon-picture
+      .yy_grid.yy_grid_3(title='Code: 0xe805')
+        .img
+          i.icon.icon-th-large
+          p.i-name icon-th-large
+      .yy_grid.yy_grid_3(title='Code: 0xe806')
+        .img
+          i.icon.icon-th-large-1
+          p.i-name icon-th-large-1
+      .yy_grid.yy_grid_3(title='Code: 0xe807')
+        .img
+          i.icon.icon-th-large-outline
+          p.i-name icon-th-large-outline
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe808')
+        .img
+          i.icon.icon-menu
+          p.i-name icon-menu
+      .yy_grid.yy_grid_3(title='Code: 0xe809')
+        .img
+          i.icon.icon-th-large-2
+          p.i-name icon-th-large-2
+      .yy_grid.yy_grid_3(title='Code: 0xe80a')
+        .img
+          i.icon.icon-heart
+          p.i-name icon-heart
+      .yy_grid.yy_grid_3(title='Code: 0xe80b')
+        .img
+          i.icon.icon-heart-empty
+          p.i-name icon-heart-empty
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe80c')
+        .img
+          i.icon.icon-star
+          p.i-name icon-star
+      .yy_grid.yy_grid_3(title='Code: 0xe80d')
+        .img
+          i.icon.icon-star-empty
+          p.i-name icon-star-empty
+      .yy_grid.yy_grid_3(title='Code: 0xe80e')
+        .img
+          i.icon.icon-star-half
+          p.i-name icon-star-half
+      .yy_grid.yy_grid_3(title='Code: 0xe80f')
+        .img
+          i.icon.icon-ok
+          p.i-name icon-ok
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe810')
+        .img
+          i.icon.icon-ok-circled
+          p.i-name icon-ok-circled
+      .yy_grid.yy_grid_3(title='Code: 0xe811')
+        .img
+          i.icon.icon-ok-circled2
+          p.i-name icon-ok-circled2
+      .yy_grid.yy_grid_3(title='Code: 0xe812')
+        .img
+          i.icon.icon-cancel
+          p.i-name icon-cancel
+      .yy_grid.yy_grid_3(title='Code: 0xe813')
+        .img
+          i.icon.icon-cancel-circled
+          p.i-name icon-cancel-circled
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe814')
+        .img
+          i.icon.icon-cancel-circled2
+          p.i-name icon-cancel-circled2
+      .yy_grid.yy_grid_3(title='Code: 0xe815')
+        .img
+          i.icon.icon-plus
+          p.i-name icon-plus
+      .yy_grid.yy_grid_3(title='Code: 0xe816')
+        .img
+          i.icon.icon-plus-circled
+          p.i-name icon-plus-circled
+      .yy_grid.yy_grid_3(title='Code: 0xe817')
+        .img
+          i.icon.icon-minus
+          p.i-name icon-minus
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe818')
+        .img
+          i.icon.icon-minus-circled
+          p.i-name icon-minus-circled
+      .yy_grid.yy_grid_3(title='Code: 0xe819')
+        .img
+          i.icon.icon-info-circled
+          p.i-name icon-info-circled
+      .yy_grid.yy_grid_3(title='Code: 0xe81a')
+        .img
+          i.icon.icon-help-circled
+          p.i-name icon-help-circled
+      .yy_grid.yy_grid_3(title='Code: 0xe81b')
+        .img
+          i.icon.icon-home
+          p.i-name icon-home
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe81c')
+        .img
+          i.icon.icon-mail
+          p.i-name icon-mail
+      .yy_grid.yy_grid_3(title='Code: 0xe81d')
+        .img
+          i.icon.icon-tags
+          p.i-name icon-tags
+      .yy_grid.yy_grid_3(title='Code: 0xe81e')
+        .img
+          i.icon.icon-thumbs-up
+          p.i-name icon-thumbs-up
+      .yy_grid.yy_grid_3(title='Code: 0xe81f')
+        .img
+          i.icon.icon-thumbs-down
+          p.i-name icon-thumbs-down
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe820')
+        .img
+          i.icon.icon-bookmark
+          p.i-name icon-bookmark
+      .yy_grid.yy_grid_3(title='Code: 0xe821')
+        .img
+          i.icon.icon-trash-empty
+          p.i-name icon-trash-empty
+      .yy_grid.yy_grid_3(title='Code: 0xe822')
+        .img
+          i.icon.icon-comment
+          p.i-name icon-comment
+      .yy_grid.yy_grid_3(title='Code: 0xe823')
+        .img
+          i.icon.icon-chat
+          p.i-name icon-chat
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe824')
+        .img
+          i.icon.icon-cog
+          p.i-name icon-cog
+      .yy_grid.yy_grid_3(title='Code: 0xe825')
+        .img
+          i.icon.icon-wrench
+          p.i-name icon-wrench
+      .yy_grid.yy_grid_3(title='Code: 0xe826')
+        .img
+          i.icon.icon-basket
+          p.i-name icon-basket
+      .yy_grid.yy_grid_3(title='Code: 0xe82b')
+        .img
+          i.icon.icon-ok-circle
+          p.i-name icon-ok-circle
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe82c')
+        .img
+          i.icon.icon-cancel-circle
+          p.i-name icon-cancel-circle
+      .yy_grid.yy_grid_3(title='Code: 0xe82d')
+        .img
+          i.icon.icon-location
+          p.i-name icon-location
+      .yy_grid.yy_grid_3(title='Code: 0xe834')
+        .img
+          i.icon.icon-spin4.animate-spin
+          p.i-name icon-spin4
+      .yy_grid.yy_grid_3(title='Code: 0xe838')
+        .img
+          i.icon.icon-spin5.animate-spin
+          p.i-name icon-spin5
+    
+      .yy_grid.yy_grid_3(title='Code: 0xe839')
+        .img
+          i.icon.icon-spin6.animate-spin
+          p.i-name icon-spin6
+      .yy_grid.yy_grid_3(title='Code: 0xf004')
+        .img
+          i.icon.icon-down-open-1
+          p.i-name icon-down-open-1
+      .yy_grid.yy_grid_3(title='Code: 0xf005')
+        .img
+          i.icon.icon-up-open-1
+          p.i-name icon-up-open-1
+      .yy_grid.yy_grid_3(title='Code: 0xf006')
+        .img
+          i.icon.icon-right-open-1
+          p.i-name icon-right-open-1
+    
+      .yy_grid.yy_grid_3(title='Code: 0xf007')
+        .img
+          i.icon.icon-left-open-1
+          p.i-name icon-left-open-1
+      .yy_grid.yy_grid_3(title='Code: 0xf025')
+        .img
+          i.icon.icon-ccw
+          p.i-name icon-ccw
+      .yy_grid.yy_grid_3(title='Code: 0xf097')
+        .img
+          i.icon.icon-bookmark-empty
+          p.i-name icon-bookmark-empty
+      .yy_grid.yy_grid_3(title='Code: 0xf0b2')
+        .img
+          i.icon.icon-resize-full-alt
+          p.i-name icon-resize-full-alt
+    
+      .yy_grid.yy_grid_3(title='Code: 0xf0c5')
+        .img
+          i.icon.icon-docs
+          p.i-name icon-docs
+      .yy_grid.yy_grid_3(title='Code: 0xf0ca')
+        .img
+          i.icon.icon-list-bullet
+          p.i-name icon-list-bullet
+      .yy_grid.yy_grid_3(title='Code: 0xf0e0')
+        .img
+          i.icon.icon-mail-alt
+          p.i-name icon-mail-alt
+      .yy_grid.yy_grid_3(title='Code: 0xf0ed')
+        .img
+          i.icon.icon-download-cloud
+          p.i-name icon-download-cloud
+    
+      .yy_grid.yy_grid_3(title='Code: 0xf0ee')
+        .img
+          i.icon.icon-upload-cloud
+          p.i-name icon-upload-cloud
+      .yy_grid.yy_grid_3(title='Code: 0xf0f6')
+        .img
+          i.icon.icon-doc-text
+          p.i-name icon-doc-text
+      .yy_grid.yy_grid_3(title='Code: 0xf0fe')
+        .img
+          i.icon.icon-plus-squared
+          p.i-name icon-plus-squared
+      .yy_grid.yy_grid_3(title='Code: 0xf10c')
+        .img
+          i.icon.icon-circle-empty
+          p.i-name icon-circle-empty
+    
+      .yy_grid.yy_grid_3(title='Code: 0xf123')
+        .img
+          i.icon.icon-star-half-alt
+          p.i-name icon-star-half-alt
+      .yy_grid.yy_grid_3(title='Code: 0xf146')
+        .img
+          i.icon.icon-minus-squared
+          p.i-name icon-minus-squared
+      .yy_grid.yy_grid_3(title='Code: 0xf14a')
+        .img
+          i.icon.icon-ok-squared
+          p.i-name icon-ok-squared
+      .yy_grid.yy_grid_3(title='Code: 0xf164')
+        .img
+          i.icon.icon-thumbs-up-alt
+          p.i-name icon-thumbs-up-alt
+    
+      .yy_grid.yy_grid_3(title='Code: 0xf165')
+        .img
+          i.icon.icon-thumbs-down-alt
+          p.i-name icon-thumbs-down-alt
+      .yy_grid.yy_grid_3(title='Code: 0xf1f8')
+        .img
+          i.icon.icon-trash
+          p.i-name icon-trash
+      .yy_grid.yy_grid_3(title='Code: 0xf234')
+        .img
+          i.icon.icon-user-plus
+          p.i-name icon-user-plus
+      .yy_grid.yy_grid_3(title='Code: 0xf2c0')
+        .img
+          i.icon.icon-user-o
+          p.i-name icon-user-o
+
+  
 
 
   
