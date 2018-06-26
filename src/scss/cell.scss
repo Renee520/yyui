@@ -2,7 +2,7 @@
 
 @mixin cell($type: "w"){
   @each $i in $col{
-    .yy_cell_#{$i}{
+    &>.yy_cell_#{$i}{
       @if ($type == 'w') {
         width: #{(100%/12)*$i};
       } @else {
@@ -24,7 +24,9 @@
   -ms-flex: 1;
   -moz-box-flex: 1;
   flex: 1;
-  margin: -$margin-sm;
+  margin: -$margin-sm ;
+  margin-top: 0;
+  margin-bottom: 0;
   &--center {
     justify-content: center;
     -ms-flex-align: center;
@@ -32,12 +34,17 @@
     -ms-flex-line-pack: center;
     align-content: center;
   }
+  .yy_column,.yy_row {
+    margin: -$margin-sm;
+  }
   .yy_cell, [class^=yy_cell_] {
+    display: flex;
     -ms-flex: 1;
     -moz-box-flex: 1;
     flex: 1;
     padding: $margin-sm;
-    // margin: $margin-sm;
+    border: 0;
+    box-sizing: border-box;
     &--center {
       @extend .yy_row--center;
     }
@@ -46,6 +53,9 @@
     -ms-flex: none;
     -moz-box-flex: none;
     flex: none;
+    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
   }
 }
 

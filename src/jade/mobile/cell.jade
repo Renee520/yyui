@@ -2,6 +2,11 @@ extends layout
 block content
 
   style.
+    .test_cell{
+      padding: 5px;
+      width: 100%;
+      overflow: hidden;
+    }
   
   br
   header.text--center
@@ -10,31 +15,65 @@ block content
   br
 
   .yy_row
-    .yy_cell.yy_blue .yy_cell  
-    .yy_cell.yy_blue .yy_cell
-    .yy_cell.yy_blue .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell .yy_cell
+    .yy_cell
+      .yy_blue.test_cell  .yy_cell
 
   .yy_row
-    .yy_cell_4.yy_success .yy_cell_2
-    .yy_cell_8.yy_success .yy_cell_10
+    .yy_cell_2
+      .yy_success.test_cell .yy_cell_2
+    .yy_cell_10
+      .yy_success.test_cell .yy_cell_10
 
 
   .yy_column
-    .yy_cell.yy_danger
-    .yy_cell.yy_danger
-    .yy_cell.yy_danger
+    .yy_cell
+      .yy_danger.test_cell .yy_cell
+    .yy_cell
+      .yy_danger.test_cell .yy_cell
 
-  .yy_column
-    .yy_cell_2.yy_wood
-    .yy_cell_2.yy_wood
-    .yy_cell_8.yy_wood
+  .yy_column(style="height: 150px;")
+    .yy_cell_6
+      .yy_wood.test_cell .yy_cell_6
+    .yy_cell
+      .yy_wood.test_cell .yy_cell
+    .yy_cell
+      .yy_wood.test_cell .yy_cell
     
-  .row
-    .yy_cell_2.yy_pink
+  .yy_row
+    .yy_cell
+      .yy_wood.test_cell .yy_cell
     .yy_cell_8
       .yy_column
-        .yy_cell.yy_violet
-        .yy_cell.yy_violet
-      .yy_row
-        .yy_cell_4.yy_success
-        .yy_cell_8.yy_success
+        .yy_cell_4
+          .yy_success.test_cell .yy_column>yy_cell_4
+        .yy_cell_6
+          .yy_row
+            .yy_cell_6
+              .yy_column
+                .yy_cell
+                  .yy_pink.test_cell .yy_column>.yy_cell
+                .yy_cell
+                  .yy_pink.test_cell .yy_column>.yy_cell
+            .yy_cell_6
+              .yy_blue.test_cell .yy_row>.yy_cell_6
+
+        .yy_cell_2
+          .yy_row
+            .yy_cell_3
+              .yy_violet.test_cell .yy_row>.yy_cell_3
+            .yy_cell_9
+              .yy_violet.test_cell .yy_row>.yy_cell_9
