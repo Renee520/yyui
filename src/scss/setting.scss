@@ -56,9 +56,7 @@ $font-size-xs: 12px;
 
 
 //btn color
-$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color), (wood $wood-color $wood-deep-color), (violet $violet-color $violet-deep-color), (blue $blue-color $blue-deep-color), (pink $pink-color $pink-deep-color), (thinwood $wood-thin-color ''), (thinviolet $violet-thin-color ''), (bluegreen $bluegreen-color ''), (graygreen $graygreen-color ''), (thinblue $blue-thin-color ''), (thinpink $pink-thin-color '');
-
-
+$btn-color: (primary $primary-color $primary-deep-color), (default $default_color $default-deep-color), (danger $danger-color $danger-deep-color), (warning $warning-color $warning-deep-color), (success $success-color $success-deep-color), (gray $gray-color $gray-deep-color), (wood $wood-color $wood-deep-color), (violet $violet-color $violet-deep-color), (blue $blue-color $blue-deep-color), (pink $pink-color $pink-deep-color), (wood--thin $wood-thin-color ''), (violet--thin $violet-thin-color ''), (bluegreen $bluegreen-color ''), (graygreen $graygreen-color ''), (blue--thin $blue-thin-color ''), (pink--thin $pink-thin-color ''), (gray--thin $gray-thin-color '');
 
 $version: moz, webkit, o, ms;
 

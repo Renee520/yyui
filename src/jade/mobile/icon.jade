@@ -9,19 +9,14 @@ block content
       overflow: hidden;
     }
 
-  script.
-    $('i').each(() => {
-      console.log(this)
-    })
-  
   br
-  header.text--center
-    h2.text--primary icon
+  header.yy_text_center
+    h2.yy_text_primary icon
   br
   br
 
   .yy_inner
-    .yy_grids.text--center
+    .yy_grids.yy_text_center
       .yy_grid.yy_grid_3(title='Code: 0xe800')
         .img
           i.icon.icon-user
@@ -310,8 +305,16 @@ block content
         .img
           i.icon.icon-user-o
           p.i-name icon-user-o
-
   
+block script
+  script.
+    $(function() {
+      console.log($.getRandomRGB());
+      $('.yy_grid').each(function (){
+        let rgb = $.getRandomRGB();
+        $(this).find('i,p').css('color', 'rgb('+rgb.r +','+rgb.g+','+rgb.b+')');
+      });
 
+    });
 
   

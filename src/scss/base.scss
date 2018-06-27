@@ -68,7 +68,7 @@ table {
   background-color: $gray-thin-color;
   opacity: 0.5;
 }
-.text--center{text-align:center;margin:0 auto;}
+.yy_text_center{text-align:center;margin:0 auto;}
 .yy_inner{padding:8px;}
 .yy_radius{
   border-radius: 5px;
@@ -91,14 +91,27 @@ table {
 @each $color in $btn_color{
   $class:      nth($color,1);
   $bgColor:    nth($color,2);
+  $deepColor:  nth($color,3);
 
   //文字颜色
-  .text--#{$class}{
+  .yy_text_#{$class}{
     color: $bgColor !important;
   }
 
-  .yy_title--#{$class} {
+  .yy_title_#{$class} {
     border-color: $bgColor;
     color: $bgColor;
+  }
+
+  @if($deepColor != '') {
+     //文字颜色
+    .yy_text_#{$class}--deep{
+      color: $deepColor !important;
+    }
+
+    .yy_title_#{$class}--deep {
+      border-color: $deepColor;
+      color: $deepColor;
+    }
   }
 }

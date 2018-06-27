@@ -19,7 +19,7 @@
   $bgColor:    nth($colorClass,2);
   $activeColor:nth($colorClass,3);
   @if($activeColor != '') {
-    .yy_deep#{$class}{
+    .yy_#{$class}--deep{
       border: 1px solid $activeColor;
       background: $activeColor;
     }

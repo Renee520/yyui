@@ -23,6 +23,7 @@ var banner =
 '/** \n\\' +
 '* '+ pkg.name +' V' + pkg.version + ' \n\\' +
 '* By '+ pkg.author +'\n\\' +
+'* ' + pkg.homepage + '\n\\' +
 '*/\n';
 
 //jade2html
@@ -36,7 +37,7 @@ gulp.task('jade', function (done) {
     .on('end', done)
 });
 
-//jade2html
+//scss2css
 gulp.task('sass', function (done) {
   gulp.src(['./src/scss/yyui.scss', './src/scss/test.scss'])
     .pipe($.sass())
@@ -62,7 +63,24 @@ gulp.task('cssmin', ['sass'], function (done) {
     .on('end', done);
 });
 
-gulp.task('jsmin', function (done) {
+// 拼接app.js
+gulp.task('concat', function (done) {
+  gulp.src([
+    // './src/js/zepto.js',
+    './src/js/random.color.js'
+  ])
+  .pipe($.concat('app.js'))
+  .pipe(gulp.dest('./dist/js'))
+  .on('end', done);
+});
+
+gulp.task('js', (done) => {
+  gulp.src(['./dist/js/app.js'])
+  .pipe($.header(banner))
+  .pipe(gulp.dest('./dist/js'))
+});
+
+gulp.task('jsmin', ['concat', 'js'], function (done) {
   gulp.src(['./dist/js/*.js', '!./dist/js/*.min.js'])           //需处理的路径
     // .pipe(gulp.dest('./www/css'))    //输出文件本地
     .pipe($.uglify())                //压缩处理成一行
@@ -82,7 +100,7 @@ gulp.task('data2dist', function (done) {
   gulp.src(['./src/images/**/*.*']).pipe(gulp.dest('./dist/images/'));
   gulp.src(['./src/font/**/*.*']).pipe(gulp.dest('./dist/font/'));
   gulp.src(['./src/css/**/*.css']).pipe(gulp.dest('./dist/css/'));
-  gulp.src(['./src/js/**/*.js']).pipe(gulp.dest('./dist/js/'));
+  gulp.src(['./src/js/zepto.js']).pipe(gulp.dest('./dist/js/'));
 });
 
 // gulp.task('')
@@ -91,7 +109,7 @@ gulp.task('build', ['jade', 'cssmin', 'jsmin', 'data2dist']);
 gulp.task('watch', function () {
   // gulp.watch(['src/jade/**/*.jade', 'src/js/**/*.js', 'src/scss/**/*.scss'], ['build']);
   gulp.watch('src/jade/**/*.jade', ['jade']);
-  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/js/**/*.js', ['jsmin']);
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/images/*.*', ['data2dist']);
   // gulp.watch('demos/css/*.css', ['copy']);
