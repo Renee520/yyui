@@ -1,0 +1,25 @@
+extends layout
+block content
+  
+  br
+  header.yy_text_center
+    h2.yy_text_primary toast
+  br
+  br
+
+  .yy_btn.yy_block.yy_success.toast--success 成功
+  .yy_btn.yy_block.yy_success.toast--fail 失败
+  .yy_btn.yy_block.yy_success.toast--text 纯文本
+  .yy_btn.yy_block.yy_success.toast--auto 自定义
+
+  script.
+    $('document').on('click', '.toast--success', () => {
+      $.toast({
+        title: '提交成功',
+        icon: 'icon-ok',
+        duration: 2000,
+        onOk: () => {
+          console.log('ok');
+        }
+      })
+    })
