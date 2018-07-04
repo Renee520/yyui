@@ -1,6 +1,8 @@
 'use strict';
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var uglifyjs = require('uglify-js'); // can be a git checkout
+                                     // or another module (such as `uglify-es` for ES6 support)
 // var connect = require('gulp-connect');
 // var jade = require('gulp-jade');
 var minimist = require('minimist');
@@ -65,24 +67,33 @@ gulp.task('cssmin', ['sass'], function (done) {
 
 // 拼接app.js
 gulp.task('concat', function (done) {
-  gulp.src([
-    // './src/js/zepto.js',
-    './src/js/random.color.js'
-  ])
+  gulp.src(['./src/js/**/*.js', '!./src/js/zepto.js'])
   .pipe($.concat('app.js'))
+  .pipe($.header(banner))
   .pipe(gulp.dest('./dist/js'))
   .on('end', done);
 });
 
-gulp.task('js', (done) => {
-  gulp.src(['./dist/js/app.js'])
-  .pipe($.header(banner))
-  .pipe(gulp.dest('./dist/js'))
-});
+// gulp.task('js', (done) => {
+//   console.log('js');
+//   gulp.src(['./dist/js/app.js'])
+//   .pipe($.header(banner))
+//   .pipe(gulp.dest('./dist/js'))
+//   .on('end', done);
+// });
 
-gulp.task('jsmin', ['concat', 'js'], function (done) {
+gulp.task('jsmin', ['concat'], function (done) {
+  console.log('压缩js');
   gulp.src(['./dist/js/*.js', '!./dist/js/*.min.js'])           //需处理的路径
-    // .pipe(gulp.dest('./www/css'))    //输出文件本地
+    .pipe(gulp.dest('./dist/js'))    //输出文件本地
+    .pipe($.babel({
+      presets: ['es2015']
+    }))
+    // .pipe($.rename({
+    //   extname: '.es2015.js'             //压缩名
+    // }))
+    // // .pipe($.rev())                      //文件名加MD5后缀
+    // .pipe(gulp.dest('./dist/js'))    //输出文件本地
     .pipe($.uglify())                //压缩处理成一行
     .pipe($.rename({
       extname: '.min.js'             //压缩名

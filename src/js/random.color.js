@@ -1,6 +1,6 @@
 "use strict";
 
-+$(function() {
++function($) {
 
   // 随机色
   $.getRandomRGB = function() {
@@ -31,4 +31,4 @@
     let r = (Math.random() * (max - min)) + min;
     return r.toFixed(deci);
   }
-});
+}($);

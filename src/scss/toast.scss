@@ -1,0 +1,53 @@
+@import './setting.scss';
+
+.yy_toast {
+  display: none;
+  .yy_mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: $max-width;
+    top: 0;
+    z-index: $z-index-4;
+  }
+
+  &__body {
+    width: 80px;
+    padding: $margin-lg;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    z-index: $z-index-topmost;
+    * {
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    font-size: 40px;
+  }
+
+  &--transparant {
+    .yy_mask {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    #{get-parent()}__body {
+      background-color: rgba(0, 0, 0, 0.7); 
+      color: #fff;
+    }
+  }
+  &--black_trans {
+    .yy_mask {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #{get-parent()}__body {
+      background-color: #fff; 
+      color: $font-primary-color;
+    }
+  }
+}

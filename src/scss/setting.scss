@@ -60,6 +60,15 @@ $btn-color: (primary $primary-color $primary-deep-color), (default $default_colo
 
 $version: moz, webkit, o, ms;
 
+$max-width: 640px;
+
+$z-index-default: 0;
+$z-index-1: 1;
+$z-index-2: 10;
+$z-index-3: 100;
+$z-index-4: 1000;
+$z-index-topmost: 9999;
+
 @mixin border{
   content: '';
   position: absolute;
@@ -88,4 +97,10 @@ $version: moz, webkit, o, ms;
   } @else {
     white-space: nowrap;
   }
+}
+
+@function get-parent($subStr: '--') {
+  $selector: str-slice(inspect(&), 2, -2);
+  $index: str-index($selector, $subStr) - 1;
+  @return str-slice($selector, 0, $index);
 }

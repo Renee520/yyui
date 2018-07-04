@@ -37,7 +37,7 @@ textarea {
 }
 body {
   min-width: 320px;
-  max-width:640px;
+  max-width: $max-width;
   margin:0 auto;
   font-size: $font-size-primary;
   font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
