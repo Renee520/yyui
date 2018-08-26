@@ -25,10 +25,16 @@ block content
       .yy_toast__text
         span 提交成功
 
+  br
+  .yy_inner
+    .yy_title.yy_title_primary 主题(theme)
+    p 默认透明背景
+    p 黑色半透明背景：black_trans
+
 block script
   script.
     let toast = new YYToast();
-    $(document).on('click', '.toast--success', () => {
+    $(document).on('tap', '.toast--success', () => {
       console.log('success');
       toast.success({
         onOk: () => {
@@ -41,19 +47,20 @@ block script
         title: '提交失败',
         duration: 1000,
       });
-    }).on('click', '.toast--text', () => {
+    }).on('tap', '.toast--text', () => {
       toast.text({
         title: '文本文本文本文本文本文本',
       });
-    }).on('click', '.toast--loading', () => {
+    }).on('tap', '.toast--loading', () => {
       toast.loading({
         title: '正在加载中',
+        theme: 'black_trans',
       });
 
       setTimeout(() => {
         toast.hideLoading();
       }, 2000);
-    }).on('click', '.toast--custom', () => {
+    }).on('tap', '.toast--custom', () => {
       toast.custom({
         title: '保存成功',
         icon: '<i class="icon icon-ok-circled">',

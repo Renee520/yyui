@@ -3,21 +3,26 @@
   "use scrict"
 
   class YYToast {
-    constructor(params) {
-      let option = {
+    // constructor(params) {
+    //   this.params = {
+    //     theme: 'transparant',
+    //     title: null,
+    //     icon: null,
+    //     duration: 2000,
+    //     onOk: null,
+    //   }
+    // };
+
+    _create(params, type) {
+      this.params = {
         theme: 'transparant',
         title: null,
         icon: null,
         duration: 2000,
         onOk: null,
       }
-      this.params = Object.assign(option, params);
-    };
-
-    _create(params, type) {
       let that = this;
       that.params = Object.assign(that.params, params);
-      console.log(that.params);
       if (type !== 'loading') {
         if (type === 'success') {
           that.params.title = that.params.title || '操作成功';
@@ -63,6 +68,7 @@
       if (type !== 'loading') {
         setTimeout(() => {
           that._hide(html);
+          that = null;
           
         }, that.params.duration);
       }
@@ -72,10 +78,11 @@
     _hide(obj) {
       let that = this;
       obj = obj || $('.yy_toast');
-      obj[0].addEventListener("animationend webkitAnimationEnd", (() => {
+      obj.fadeOut(100);
+      setTimeout(() => {
         that.params.onOk && that.params.onOk();
         obj.remove();
-      })());  // Chrome, Safari 和 Opera
+      }, 100);
     }
 
     success(params) {
@@ -83,7 +90,6 @@
     }
 
     cancel(params) {
-      console.log('cancel', params);
       this._create(params, 'cancel');
     }
 
