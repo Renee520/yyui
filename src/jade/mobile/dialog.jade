@@ -1,0 +1,52 @@
+extends layout
+block content
+  
+  br
+  header.yy_text_center
+    h2.yy_text_primary dialog
+  br
+  br
+  
+  .yy_inner
+    .yy_btn.yy_block.yy_success.dialog--alert alert
+  .yy_inner
+    .yy_btn.yy_block.yy_success.dialog--confirm confirm
+  .yy_inner
+    .yy_btn.yy_block.yy_success.dialog--custom 自定义
+
+
+block script
+  script.
+    let dialog = new YYDialog();
+    let toast = new YYToast();
+    $(document).on('tap', '.dialog--alert', () => {
+      console.log('alert');
+      dialog.alert({
+        title: '标题',
+        content: 'ert内容alert内容alert',
+        onOk: () => {
+          console.log('alert ok');
+        }
+      })
+    })
+    .on('tap', '.dialog--confirm', () => {
+      dialog.confirm({
+        title: '标题标题',
+        content: '正文操作正文。。。',
+        onOk: () => {
+          toast.success({
+            title: '选择确认',
+          });
+        },
+        onCancel: () => {
+          toast.cancel({
+            title: '选择取消',
+          });
+        },
+      });
+    })
+    //- .on('tap', 'dialog-custom', () => {
+    //-   dialog.custom({
+    //-     content: '<>',
+    //-   });
+    //- })
