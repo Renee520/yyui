@@ -1,0 +1,44 @@
+@import 'setting.scss';
+
+.yy_check {
+  display: inline-block;
+  width: 19px;
+  input[type="radio"], input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: $z-index-1;
+
+    & + .yy_check_icon {
+      .icon-ok-circle, .icon-ok-squared-1, .icon-dot-circled {
+        display: none;
+      }
+      .icon-circle-thin, .icon-check-empty {
+        display: inline-block;
+      }
+    }
+
+    &:checked + .yy_check_icon {
+      .icon-ok-circle, .icon-ok-squared-1, .icon-dot-circled {
+        display: inline-block;
+      }
+      .icon-circle-thin, .icon-check-empty {
+        display: none;
+      }
+    }
+  }
+}
+
+.yy_check_group {
+  &__side {
+    position: relative;
+    display: inline-block;
+    margin-right: $margin-lg;
+    .yy_check {
+      @extend .yy_check;
+    }
+  }
+}

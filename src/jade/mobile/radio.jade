@@ -3,23 +3,160 @@ block content
   
   br
   header.yy_text_center
-    h2.yy_text_primary 单选框
+    h2.yy_text_primary 单、多选
   br
   br
   
   .yy_inner
+    .yy_title.yy_title_primary 单选列表
     .yy_outline.yy_inner
       .yy_group.yy_border
-        .yy_group__side 北京
+        .yy_group__side 北京1
         .yy_group__info
+          input(name="radio1", checked, type="radio", value="1")
+          i.yy_text_primary.icon.icon-ok-1
       .yy_group.yy_border
-        .yy_group__side 北京
+        .yy_group__side 北京2
         .yy_group__info
+          input(name="radio1", type="radio", value="2")
+          i.yy_text_primary.icon.icon-ok-1
       .yy_group.yy_border
-        .yy_group__side 北京
+        .yy_group__side 北京3
         .yy_group__info
-          
+          input(name="radio1", type="radio", value="3")
+          i.yy_text_primary.icon.icon-ok-1
 
+   .yy_inner
+    .yy_title.yy_title_primary 单选按钮
+    .yy_outline.yy_inner
+      .yy_group.yy_border
+        .yy_group__side
+          .yy_check
+            input(name="radio2", type="radio", value="1")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-ok-circle
+              i.yy_text_gray--thin.icon.icon-circle-thin
+          span 北京1
+      .yy_group.yy_border
+        .yy_group__side 
+          .yy_check
+            input(name="radio2", type="radio", value="2")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-ok-circle
+              i.yy_text_gray--thin.icon.icon-circle-thin
+          span 北京2
+      .yy_group.yy_border
+        .yy_group__side 
+          .yy_check
+            input(name="radio2", type="radio", value="3")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-ok-circle
+              i.yy_text_gray--thin.icon.icon-circle-thin
+          span 北京3
+
+   .yy_inner
+    .yy_title.yy_title_primary 单选按钮2
+    .yy_outline.yy_inner
+      .yy_group.yy_border
+        .yy_group__side
+          .yy_check
+            input(name="radio3", type="radio", value="1")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-dot-circled
+              i.yy_text_gray--thin.icon.icon-circle-thin
+          span 北京1
+      .yy_group.yy_border
+        .yy_group__side 
+          .yy_check
+            input(name="radio3", type="radio", value="2")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-dot-circled
+              i.yy_text_gray--thin.icon.icon-circle-thin
+          span 北京2
+      .yy_group.yy_border
+        .yy_group__side 
+          .yy_check
+            input(name="radio3", type="radio", value="3")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-dot-circled
+              i.yy_text_gray--thin.icon.icon-circle-thin
+          span 北京3
+
+  .yy_inner
+    .yy_title.yy_title_primary 单选inline
+    .yy_check_group
+      .yy_check_group__side
+        .yy_check
+          input(name="radio4", type="radio", value="1")
+          span.yy_group__icon--min.yy_check_icon
+            i.yy_text_primary.icon.icon-dot-circled
+            i.yy_text_gray--thin.icon.icon-circle-thin
+        span 北京1
+      .yy_check_group__side
+        .yy_check
+          input(name="radio4", type="radio", value="2")
+          span.yy_group__icon--min.yy_check_icon
+            i.yy_text_primary.icon.icon-dot-circled
+            i.yy_text_gray--thin.icon.icon-circle-thin
+        span 北京2
+      .yy_check_group__side
+        .yy_check
+          input(name="radio4", type="radio", value="3")
+          span.yy_group__icon--min.yy_check_icon
+            i.yy_text_primary.icon.icon-dot-circled
+            i.yy_text_gray--thin.icon.icon-circle-thin
+        span 北京3
+
+
+  .yy_inner
+    .yy_title.yy_title_primary 多选列表
+    .yy_group.yy_border
+      .yy_group__side 北京1
+      .yy_group__info
+        input(name="checkbox1", readonly, type="checkbox", value="1")
+        i.yy_text_primary.icon.icon-ok-1
+    .yy_group.yy_border
+      .yy_group__side 北京2
+      .yy_group__info
+        input(name="checkbox1", type="checkbox", value="2")
+        i.yy_text_primary.icon.icon-ok-1
+    .yy_group.yy_border
+      .yy_group__side 北京3
+      .yy_group__info
+        input(name="checkbox1", type="checkbox", value="3")
+        i.yy_text_primary.icon.icon-ok-1
+
+  .yy_inner
+    .yy_title.yy_title_primary 多选按钮
+    .yy_outline.yy_inner
+      .yy_group.yy_border
+        .yy_group__side
+          .yy_check
+            input(name="checkbox2", type="checkbox", value="1")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-ok-squared-1
+              i.yy_text_gray--thin.icon.icon-check-empty
+          span 北京1
+      .yy_group.yy_border
+        .yy_group__side 
+          .yy_check
+            input(name="checkbox2", type="checkbox", value="2")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-ok-squared-1
+              i.yy_text_gray--thin.icon.icon-check-empty
+          span 北京2
+      .yy_group.yy_border
+        .yy_group__side 
+          .yy_check
+            input(name="checkbox2", type="checkbox", value="3")
+            span.yy_group__icon--min.yy_check_icon
+              i.yy_text_primary.icon.icon-ok-squared-1
+              i.yy_text_gray--thin.icon.icon-check-empty
+          span 北京3
+
+
+  br
+  br
 
 block script
   script.

@@ -70,6 +70,25 @@
     color: $gray-color;
     *{color: $gray-color;}
     margin-left: $margin-sm;
+
+    input[type="radio"], input[type="checkbox"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: $z-index-1;
+
+      & + i.icon-ok-1 {
+        display: none;
+      }
+
+      &:checked + i.icon-ok-1 {
+        display: block;
+        font-size: $font-size-xs;
+      }
+    }
   }
   .yy_group__icon{
     width: 34px;
