@@ -25,7 +25,6 @@
       }
       let that = this;
       that.params = Object.assign(that.params, params);
-      console.log('---', that.params);
 
       let footer = '';
       if (type === 'alert') {

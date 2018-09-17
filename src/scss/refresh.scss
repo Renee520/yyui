@@ -1,0 +1,24 @@
+.yy_refresh {
+  &__pull{
+    &_box{
+      height: 50px;
+      line-height: 50px;
+      i {
+        margin-right: $margin-primary;
+      }
+    }
+    &--animate {
+      margin-top: -50px;
+      -webkit-transition: transform 0.2s;
+      transition: transform 0.2s;
+      transition: -webkit-transform 0.2s;
+    }
+    &--active {
+  
+    }
+    &--end {
+      transform: translate3d(0, 50px, 0);
+    }
+  }
+
+}

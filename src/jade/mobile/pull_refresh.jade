@@ -1,0 +1,32 @@
+extends layout
+block content
+  //- .yy_refresh__pull_box.yy_text_center
+  //-   i.icon.icon-down-1
+  //-   span 下拉刷新
+
+
+  br
+  header.yy_text_center
+    h2.yy_text_primary 下拉刷新
+  br
+  br
+  .yy_inner
+    span
+
+
+block script
+  script.
+    var refresh = new YYRefresh({
+      container: 'body',
+      triggerDistance: 200,
+    });
+
+    refresh.pullRefresh((err) => {
+      console.log('pull refresh error:', err);
+      if (!err) {
+        setTimeout(() => {
+          $('.yy_inner span').html(new Date());
+          refresh.pullRefreshEnd();
+        }, 2000);
+      }
+    });

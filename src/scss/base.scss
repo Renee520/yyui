@@ -35,9 +35,13 @@ a,input{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;
 textarea {
   line-height: 1.25em;
 }
+html {
+  height: 100%;
+}
 body {
   min-width: 320px;
   max-width: $max-width;
+  height: 100%;
   margin:0 auto;
   font-size: $font-size-primary;
   font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
