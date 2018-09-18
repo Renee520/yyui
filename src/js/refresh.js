@@ -36,7 +36,7 @@
       }
     };
 
-    _pullRefreshActive(box) {
+    _pullRefreshActive(box, callback) {
       box.addEventListener('touchstart', (event) => {
         this.initY = event.touches[0].pageY;
       });
@@ -85,7 +85,7 @@
       this._init(box, type);
       if (type === 'pull') {
         this.loading = true;
-        this._pullRefreshActive(box);
+        this._pullRefreshActive(box, callback);
       }
       
       if (type === 'scroll') {
