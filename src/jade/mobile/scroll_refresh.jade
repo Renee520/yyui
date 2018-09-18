@@ -1,0 +1,74 @@
+extends layout
+block content
+
+  br
+  header.yy_text_center
+    h2.yy_text_primary 滚动加载
+  br
+  br
+
+  .test_refresh__scroll.yy_inner
+    .test_refresh__scroll_box
+      .yy_text_center
+        h3.yy_text_primary 静女
+        p.yy_text_gray.test_text--xs[先秦] 诗经
+        br
+        p 静女其姝，俟我于城隅。
+        p 爱而不见，搔首踟蹰。
+        br 
+        p 静女其娈，贻我彤管。
+        p 彤管有炜，说怿女美。
+        br
+        p 自牧归荑，洵美且异。
+        p 匪女之为美，美人之贻。
+
+      br
+      br
+      .yy_text_center
+        h3.yy_text_primary 静女
+        p.yy_text_gray.test_text--xs[先秦] 诗经
+        br
+        p 静女其姝，俟我于城隅。
+        p 爱而不见，搔首踟蹰。
+        br 
+        p 静女其娈，贻我彤管。
+        p 彤管有炜，说怿女美。
+        br
+        p 自牧归荑，洵美且异。
+        p 匪女之为美，美人之贻。
+      br
+      br
+      .yy_text_center
+        h3.yy_text_primary 静女
+        p.yy_text_gray.test_text--xs[先秦] 诗经
+        br
+        p 静女其姝，俟我于城隅。
+        p 爱而不见，搔首踟蹰。
+        br 
+        p 静女其娈，贻我彤管。
+        p 彤管有炜，说怿女美。
+        br
+        p 自牧归荑，洵美且异。
+        p 匪女之为美，美人之贻。
+
+
+block script
+  script.
+    var refresh = new YYRefresh({
+      container: '.test_refresh__scroll',
+      text: '玩命加载中',
+    });
+
+    let page = 1;
+
+    refresh.scrollRefresh((err) => {
+      console.log('pull refresh error:', err);
+      if (!err) {
+        page += 1;
+        setTimeout(() => {
+          var html = '<br /><br /><div class="yy_text_center"><h3 class="yy_text_primary">静女'+page+'</h3><p class="yy_text_gray test_text--xs">[先秦] 诗经</p><br><p>静女其姝，俟我于城隅。</p><p>爱而不见，搔首踟蹰。</p><br><p>静女其娈，贻我彤管。</p><p>彤管有炜，说怿女美。</p><br><p>自牧归荑，洵美且异。</p><p>匪女之为美，美人之贻。</p></div>';
+          $('.test_refresh__scroll_box').append(html);
+          refresh.scrollRefreshEnd({over: page >= 3});
+        }, 2000);
+      }
+    });

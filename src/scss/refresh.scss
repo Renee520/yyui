@@ -6,6 +6,10 @@
       i {
         margin-right: $margin-primary;
       }
+      * {
+        font-size: $font-size-xs;
+        color: $gray-color;
+      }
     }
     &--animate {
       margin-top: -50px;
@@ -13,12 +17,22 @@
       transition: transform 0.2s;
       transition: -webkit-transform 0.2s;
     }
-    &--active {
-  
-    }
     &--end {
       transform: translate3d(0, 50px, 0);
     }
   }
 
+  &__scroll {
+    &--animate {
+      height: 50px;
+      line-height: 50px;
+      i {
+        margin-right: $margin-primary;
+      }
+      * {
+        font-size: $font-size-xs;
+        color: $gray-color;
+      }
+    }
+  }
 }

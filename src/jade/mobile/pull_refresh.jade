@@ -1,9 +1,5 @@
 extends layout
 block content
-  //- .yy_refresh__pull_box.yy_text_center
-  //-   i.icon.icon-down-1
-  //-   span 下拉刷新
-
 
   br
   header.yy_text_center
@@ -18,7 +14,7 @@ block script
   script.
     var refresh = new YYRefresh({
       container: 'body',
-      triggerDistance: 200,
+      triggerDistance: 150,
     });
 
     refresh.pullRefresh((err) => {

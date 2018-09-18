@@ -1,3 +1,5 @@
+@import 'setting.scss';
+
 .test_grids{
   .yy_grid_3{
     height: 96px;
@@ -8,5 +10,11 @@
   .test_grid{
     width: 40px;
     height: 40px;
+  }
+}
+
+.test_text {
+  &--xs {
+    font-size: $font-size-xs;
   }
 }
