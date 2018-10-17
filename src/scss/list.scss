@@ -51,6 +51,13 @@
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
+
+    input{
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-left: $margin-md;
+    }
   }
   .yy_group_title{
     font-size: $font-size-primary;

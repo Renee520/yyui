@@ -1,0 +1,105 @@
+@import 'setting.scss';
+
+$picker-col-height: 30px;
+
+.yy_picker {
+  position: fixed;
+  z-index: $z-index-1;
+  width: 100%;
+  max-width: $max-width;
+  height: 260px;
+  box-sizing: border-box;
+  bottom: 0;
+  transform: translate3d(0, 100%, 0);
+  background-color: $bg-color-thin;
+  overflow: hidden;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  
+  &--show {
+    transform: translate3d(0, 0, 0);
+
+  }
+
+  &__header {
+    padding: $space-primary $margin-primary;
+    position: relative;
+    background-color: #fff;
+    &:before {
+      @include border;
+      height: 1px;
+      top: 0;
+      border-bottom: none;
+    }
+  }
+  &__title {
+    text-align: center;
+  }
+
+  &__body{
+    position: relative;
+    height: 222px;
+    overflow: hidden;
+    .yy_row {
+      justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      height: 100%;
+    }
+  }
+
+  &__col {
+    padding: 0 $margin-primary 0 $margin-lg;
+    text-align: center;
+    max-height: 100%;
+    -webkit-transition: transform 0.3s;
+    transition: transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    // transform: translate3d(0, 0, 0);
+
+
+    &_wrap {
+      -webkit-transition: transform 0.2s;
+      transition: transform 0.2s;
+      transition: -webkit-transform 0.2s;
+    }
+    
+    &_item {
+      line-height: $picker-col-height;
+      height: $picker-col-height;
+      color: $gray-color;
+
+      &--selected {
+        color: $font-primary-color;
+      }
+    }
+
+  }
+
+  &__select_item {
+    position: absolute;
+    height: $picker-col-height - 2;
+    width: 100%;
+    top: 50%;
+    margin-top: -$picker-col-height/2;
+    border-top: 1px solid $gray-thin-color;
+    border-bottom: 1px solid $gray-thin-color;
+    z-index: -1;
+
+  }
+
+  &__cancel, &__confirm {
+    position: absolute;
+    padding: $margin-sm 0;
+    bottom: 0;
+    left: $margin-primary;
+    z-index: $z-index-2;
+  }
+  &__confirm {
+    left: inherit;
+    right: $margin-primary;
+  }
+}
