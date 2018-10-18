@@ -36,7 +36,7 @@
           });
           
           // 取消或完成事件
-          $(document).on('click', (event) => {
+          $(document).on('tap', (event) => {
             if (event.target.className.indexOf('yy_picker') < 0 && event.target !== this.params.element[0] && !this.close) {
               this._hide();
             }
