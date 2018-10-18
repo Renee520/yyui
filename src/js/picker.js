@@ -11,20 +11,52 @@
         confirmText: '完成',
         data: [],
         value: [],
-        showValue: '',
+        showValue: [],
         onChange: null,
         onConfirm: null,
       };
       this.params = Object.assign(options, params);
+      this.close = true;
       this.cols = [];
       this.pickerBox = '';
       this.initHeight = 0;
       this.itemHeight = 30;
-      this._init();
+      this._active();
+    }
+
+    _active() {
+      // 选择元素点击事件
+      this.params.element.on('click', () => {
+        if (this.close) {
+          this._init();
+          this.pickerBox.addClass('yy_picker--show');
+  
+          setTimeout(() => {
+            if (this.close) this.close = false;
+          });
+          
+          // 取消或完成事件
+          $(document).on('click', (event) => {
+            if (event.target.className.indexOf('yy_picker') < 0 && event.target !== this.params.element[0] && !this.close) {
+              this._hide();
+            }
+          });
+          this.pickerBox
+            .on('click', '.yy_picker__cancel', () => {
+              this._hide();
+            })
+            .on('click', '.yy_picker__confirm', () => {
+              // 触发confirm函数
+              this.params.onConfirm && this.params.onConfirm(this.params.value, this.params.showValue);
+              this._hide();
+            });
+
+        }
+      });
     }
 
     _init() {
-      this.pickerBox = $(`<div class="yy_picker"><div class="yy_picker__header"><div class="yy_picker__cancel yy_text_gray">${this.params.cancelText}</div><div class="yy_picker__confirm yy_text_primary">${this.params.confirmText}</div><div class="yy_picker__title">${this.params.title}</div></div><div class="yy_picker__body"><div class="yy_row"></div></div></div>`);
+      this.pickerBox = $(`<div class="yy_picker"><div class="yy_picker__header"><a href="javascript:;" class="yy_picker__cancel yy_text_gray">${this.params.cancelText}</a><a href="javascript:;" class="yy_picker__confirm yy_text_primary">${this.params.confirmText}</a><div class="yy_picker__title">${this.params.title}</div></div><div class="yy_picker__body"><div class="yy_row"></div></div></div>`);
 
       if (this.params.data && this.params.data.length) {
         this.params.data.forEach((col, idx) => {
@@ -34,14 +66,17 @@
               len: col.value.length,    // 每列数据长度
             });
             if (this.params.value.length < this.params.data.length) {
-              this.params.value[idx] = col.value[0];
-            } 
+              this.params.value[idx] = col.value[0].value || col.value[0];
+              this.params.showValue[idx] = col.value[0].name || col.value[0];
+            }
             let colBox = `<div class="yy_picker__col"><div class="yy_picker__col_wrap">`;
             col.value.forEach((item, itemIdx) => {
-              colBox += `<div class="yy_picker__col_item">${item}</div>`;
-              if (item === this.params.value[idx]) {
-                
+              let value = item.value || item;
+
+              colBox += `<div class="yy_picker__col_item">${item.name || item}</div>`;
+              if (value === this.params.value[idx]) {
                 this.cols[idx]['idx'] = itemIdx;
+                this.params.showValue[idx] = item.name || item;
               }
             });
             colBox += `</div></div>`;
@@ -57,12 +92,7 @@
         this.itemHeight = this.pickerBox.find('.yy_picker__col_item').height() || this.itemHeight;
         this.initHeight = (this.pickerBox.find('.yy_picker__body').height()- this.itemHeight) / 2;
        
-        this.params.element.val(this.params.value.join(' '));
-
-        // 选择元素点击事件
-        this.params.element.on('tap click', () => {
-          this.pickerBox.addClass('yy_picker--show');
-        });
+        this.params.element.val(this.params.showValue.join(' '));
 
         // 设置每列定顶部距离
         this.cols.forEach((col, idx) => {
@@ -72,8 +102,6 @@
         // 每列添加滑动事件
         this._picker();
 
-        // TODO: 取消或完成事件
-        
       }
     }
 
@@ -144,17 +172,28 @@
         this.cols[idx]['idx'] = num;
         $(element).find('.yy_picker__col_wrap').css('transform', `translate3d(0, ${this.initHeight - num * this.itemHeight}px, 0)`);
         this._setSelect(element, idx);
-        this.params.onConfirm && this.params.onConfirm(this.params.value);
       });
     }
 
     _setSelect(element, idx, itemIdx = this.cols[idx]['idx']) {
-      if (this.params.value[idx] != this.params.data[idx].value[itemIdx]) {
-        this.params.value[idx] = this.params.data[idx].value[itemIdx];
-        this.params.onChange && this.params.onChange(this.params.value);
+      let val = this.params.data[idx].value[itemIdx].value || this.params.data[idx].value[itemIdx];
+      let showVal = this.params.data[idx].value[itemIdx].name || this.params.data[idx].value[itemIdx];
+      if (this.params.value[idx] != val) {
+        this.params.value[idx] = val;
+        this.params.showValue[idx] = showVal;
+        this.params.onChange && this.params.onChange(this.params.value, this.params.showValue);
         $(element).find('.yy_picker__col_item').removeClass('yy_picker__col_item--selected').eq(itemIdx).addClass('yy_picker__col_item--selected');
-        this.params.element.val(this.params.value.join(' '));
+        this.params.element.val(this.params.showValue.join(' '));
       }
+    }
+
+    // hide
+    _hide() {
+      this.pickerBox.removeClass('yy_picker--show');
+      this.close = true;
+      this.pickerBox[0].addEventListener('transitionend', () => {
+        this.pickerBox.remove();
+      }, false)
     }
 
   }
