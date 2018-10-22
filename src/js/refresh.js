@@ -1,6 +1,6 @@
 
 +function(window) {
-  "use scrict"
+  "use strict"
 
   class YYRefresh {
     constructor(params) {

@@ -22,10 +22,22 @@ block content
       .yy_group__info
         i.icon.icon-right-open-1
 
+  br
+
+  .yy_inner.yy_title_primary 联动数据
+  .yy_groups
+    .yy_group.yy_border
+      span 点击选择
+      .yy_group__side
+        input#picker3(readonly)
+      .yy_group__info
+        i.icon.icon-right-open-1
+
 
 
 block script
-  script.
+  //- script(src="../../js/addr.js")
+  script(type="module").
     new YYPicker({
       element: $('#picker1'),
       title: '请选择日期1',
@@ -138,6 +150,123 @@ block script
         }
       ],
       value: ['2015', '6', '2'],
+      //- showValue: '2015 6 2',
+      onChange: (val, showVal) => {
+        console.log('picker1 changed:', val, showVal);
+      },
+      onConfirm: (val, showVal) => {
+        console.log('picker1 confirm:', val, showVal);
+      },
+    });
+
+    import { addrs } from '../../js/addr.js';
+    //- console.log(addrs);
+
+    new YYPicker({
+      element: $('#picker3'),
+      title: '请选择日期',
+      linkage: true,
+      //- cancelText: '取消',
+      //- confirmText: '完成',
+      //- data: [
+      //-   {
+      //-     name: '北京',
+      //-     code: '111',
+      //-     sub: [
+      //-       {name: ''}
+      //-     ],
+      //-   }
+      //- ],
+      data: addrs,
+      //- data: [
+      //-   {
+      //-     "name":"北京",
+      //-     "value":"110000",
+      //-     "sub": [
+      //-       {
+      //-         "name": "北京市",
+      //-         "value": "110000",
+      //-         "sub":[
+      //-           {
+      //-             "name":"东城区",
+      //-             "value":"110101"
+      //-           },
+      //-           {
+      //-             "name":"西城区",
+      //-             "value":"110102"
+      //-           },
+      //-           {
+      //-             "name":"朝阳区",
+      //-             "value":"110105"
+      //-           },
+      //-         ],
+      //-       },
+      //-     ],
+      //-   },
+      //-   {
+      //-     "name":"上海",
+      //-     "value":"310000",
+      //-     "sub": [
+      //-       {
+      //-         "name":"上海市",
+      //-         "value": "310000",
+      //-         "sub":[
+      //-           {
+      //-             "name":"黄浦区",
+      //-             "value":"310101"
+      //-           },
+      //-           {
+      //-             "name":"徐汇区",
+      //-             "value":"310104"
+      //-           },
+      //-           {
+      //-             "name":"长宁区",
+      //-             "value":"310105"
+      //-           },
+      //-         ],
+      //-       },
+      //-     ],
+      //-   },
+      //-   {
+      //-     "name":"江苏省",
+      //-     "value":"320000",
+      //-     "sub":[
+      //-       {
+      //-         "name":"南京市",
+      //-         "value":"320100",
+      //-         "sub":[
+      //-           {
+      //-             "name":"市辖区",
+      //-             "value":"320101"
+      //-           },
+      //-           {
+      //-             "name":"玄武区",
+      //-             "value":"320102"
+      //-           },
+      //-           {
+      //-             "name":"秦淮区",
+      //-             "value":"320104"
+      //-           },
+      //-         ],
+      //-       },
+      //-       {
+      //-         "name":"无锡市",
+      //-         "value":"320200",
+      //-         "sub":[
+      //-           {
+      //-             "name":"市辖区",
+      //-             "value":"320201"
+      //-           },
+      //-           {
+      //-             "name":"崇安区",
+      //-             "value":"320202"
+      //-           },
+      //-         ],
+      //-       },
+      //-     ],
+      //-   },
+      //- ],
+      value: ['320000', '320200', '320202'],
       //- showValue: '2015 6 2',
       onChange: (val, showVal) => {
         console.log('picker1 changed:', val, showVal);

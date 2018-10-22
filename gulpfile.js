@@ -67,7 +67,7 @@ gulp.task('cssmin', ['sass'], function (done) {
 
 // 拼接app.js
 gulp.task('concat', function (done) {
-  gulp.src(['./src/js/**/*.js', '!./src/js/zepto.js'])
+  gulp.src(['./src/js/**/*.js', '!./src/js/zepto.js', '!./src/js/addr.js'])
   .pipe($.concat('app.js'))
   .pipe($.header(banner))
   .pipe(gulp.dest('./dist/js'))
@@ -112,6 +112,7 @@ gulp.task('data2dist', function (done) {
   gulp.src(['./src/font/**/*.*']).pipe(gulp.dest('./dist/font/'));
   gulp.src(['./src/css/**/*.css']).pipe(gulp.dest('./dist/css/'));
   gulp.src(['./src/js/zepto.js']).pipe(gulp.dest('./dist/js/'));
+  gulp.src(['./src/js/addr.js']).pipe(gulp.dest('./dist/js/'));
 });
 
 // gulp.task('')
